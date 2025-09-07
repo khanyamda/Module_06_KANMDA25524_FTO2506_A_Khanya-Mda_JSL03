@@ -53,7 +53,7 @@ if (task1Status !== "done" && task2Status !== "done") {
 }
 
 // Initial array for tasks
-const initialTasks = [
+const tasks = [
   {
     id: 1,
     title: "Launch Epic Career",
@@ -147,7 +147,7 @@ function showAllTasks() {
     console.log("Title: " + tasks[i].title);
     console.log("Description: " + tasks[i].description);
     console.log("Status: " + tasks[i].status);
-   // console.log("---");
+  
   }
   
   console.log("Total tasks: " + tasks.length);
