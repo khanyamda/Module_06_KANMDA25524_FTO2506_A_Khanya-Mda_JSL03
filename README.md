@@ -1,38 +1,78 @@
-# JSL03 Project Brief: Console-Based Task Manager
+# JSL03 Console-Based Task Manager 📋
 
-## Important Prerequisite
+A simple, interactive task management system that allows users to add tasks to an existing array and filter them by completion status. This project demonstrates JavaScript fundamentals including array manipulation, user interaction through prompts, input validation, and console-based task management.
 
-1. Before starting this challenge, make sure you have reviewed and corrected your JSL02 project using the provided solution. Your prompts for entering task details should be fully functional and include proper validation checks to ensure accurate user input.
-2. **Check the project user stories in your student dashboard**, make sure you understand what is required for each feature.
+### Core Functionality
+- **Add New Tasks**: Users can add up to 3 new tasks to the existing task list
+- **Structured Task Storage**: Tasks are stored as objects in an array with unique incremental IDs
+- **Input Validation**: Comprehensive validation ensures accurate user input
+- **Task Filtering**: View all tasks or filter to show only completed tasks
+- **Console-Based Interface**: All interactions happen through browser prompts and console logging
 
-## Overview
+### Task Properties
+Each task contains:
+- **ID**: Unique incremental identifier
+- **Title**: Task name/summary
+- **Description**: Detailed task description
+- **Status**: Current progress (`todo`, `doing`, `done`)
 
-This project involves creating a **simple task management system** where users can add **up to three new tasks** to an existing task array. Tasks are **stored as objects in an array**, each with a **unique incremental ID**. Users will enter task details via prompts, and the system will allow filtering to view only completed tasks. The project focuses on **array manipulation, user interaction via prompts and alerts, and console logging for task management**.
+## 📖 How to Use
 
-## Key Objectives
+### Initial Setup
+When you first load the page, you'll be prompted to:
+1. Enter details for Task 1 (title, description, status)
+2. Enter details for Task 2 (title, description, status)
+3. Any completed tasks will be automatically logged to the console
 
-### Logic & User Interaction
+### Interactive Functions
+After the initial setup, use these console commands:
 
-- Store tasks as **objects inside an array** for structured data management.
-- Allow users to **add up to three new tasks** to the existing task list.
-- Ensure each new task has a **unique incremental ID** based on the last task in the array.
-- Prompt users to enter **task details (title, description, status)** and store them in an object.
-- Alert users when they reach the task limit with the message:
-  _"There are enough tasks on your board, please check them in the console."_
-  Implement a **filter function** to display only tasks with the status `"done"`.
-- Log **all tasks** in the console with a clear label for easy review.
-- Log **only completed tasks** (status: `"done"`) in the console under a "Completed Tasks" label for quick reference.
+```javascript
+// Add a new task (maximum 3 additional tasks)
+addTask()
 
-## Code Quality & Maintainability
+// View all tasks in the system
+showAllTasks()
 
-- Use meaningful variable and function names to ensure readability and maintainability.
-- Follow consistent indentation and formatting to enhance code clarity.
-- Include comments explaining key logic and functionality to support future modifications.
+// View only completed (done) tasks
+showCompletedTasks()
+```
 
-## Expected Outcome
+### Adding Tasks
+- You can add a maximum of 3 new tasks
+- Each task requires a title, description, and status
+- Status must be one of: `todo`, `doing`, or `done`
+- Empty fields are not allowed
+- When the limit is reached, you'll see: *"There are enough tasks on your board, please check them in the console."*
 
-A **structured and limited task management system** that enables users to add, review, and filter tasks efficiently while ensuring **clean, well-documented, and maintainable code.**
 
-**Console Log of all and completed tasks**
+### Default Tasks
+The system comes pre-loaded with sample tasks:
+1. **Launch Epic Career** (todo) - Create a killer Resume
+2. **Master JavaScript** (doing) - Get comfortable with the fundamentals  
+3. **Contribute to Open Source Projects** (done) - Gain practical experience
 
-![console log](./explainer-images/console%20log.png)
+
+## 🎯 Learning Objectives
+
+This project helps me master:
+- JavaScript array methods and object manipulation
+- User input handling and validation
+- Console-based debugging and logging
+- Function design and modular programming
+- Conditional logic and loop structures
+- Error handling and user feedback
+
+
+### Console Commands Reference
+```javascript
+addTask()           // Add a new task
+showAllTasks()      // Display all tasks
+showCompletedTasks()// Display only completed tasks
+```
+
+## Note
+
+This is an educational project for my JavaScript Fundamentals JSLO3. 
+
+**Happy Task Managing! 🚀**
