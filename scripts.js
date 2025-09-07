@@ -52,6 +52,7 @@ if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
 }
 
+// Initial array for tasks
 const initialTasks = [
   {
     id: 1,
@@ -73,3 +74,105 @@ const initialTasks = [
     status: "done",
   },
 ];
+
+let newTasks = 0;
+
+// Allow user to add a task
+function addTask() {
+
+// The user can only add a maximum of three tasks
+
+  if (newTasks == 3) {
+    alert("There are enough tasks on your board, please check them in the console.");
+    return;
+  }
+
+// Ask the user for task information
+
+  let title = prompt("Enter task title:");
+  let description = prompt("Enter task description:");
+  let status = prompt("Enter task status (todo/doing/done):");
+
+// Check that the user has typed something
+
+  if (title == "" || title == null) {
+    alert("Need a title!");
+    return;
+  }
+  if (description == "" || description == null) {
+    alert("Need a description!");
+    return;
+  }
+  if (status == "" || status == null) {
+    alert("Need a status!");
+    return;
+  }
+
+  // Check if task status is correct
+
+  if (status != "todo" && status != "doing" && status != "done") {
+    alert("Status must be todo, doing, or done");
+    return;
+  }
+
+  // Find biggest ID number
+  let biggestId = 0;
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].id > biggestId) {
+      biggestId = tasks[i].id;
+    }
+  }
+
+  // Create new task
+  let newTask = {
+    id: biggestId + 1,
+    title: title,
+    description: description,
+    status: status
+  };
+
+  // Add to task list
+  tasks.push(newTask);
+  newTasks = newTasks + 1;
+
+  console.log("Added task:", newTask);
+}
+
+// Show all tasks
+function showAllTasks() {
+  console.log("ALL TASKS:");
+  
+  for (let i = 0; i < tasks.length; i++) {
+    console.log("ID: " + tasks[i].id);
+    console.log("Title: " + tasks[i].title);
+    console.log("Description: " + tasks[i].description);
+    console.log("Status: " + tasks[i].status);
+   // console.log("---");
+  }
+  
+  console.log("Total tasks: " + tasks.length);
+}
+
+// Show only done tasks
+function showCompletedTasks() {
+  console.log("COMPLETED TASKS:");
+  
+  let doneCount = 0;
+  
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i].status == "done") {
+      console.log("ID: " + tasks[i].id);
+      console.log("Title: " + tasks[i].title);
+      console.log("Description: " + tasks[i].description);
+      console.log("Status: " + tasks[i].status);
+      console.log("---");
+      doneCount = doneCount + 1;
+    }
+  }
+  
+  if (doneCount == 0) {
+    console.log("No done tasks yet!");
+  } else {
+    console.log("Done tasks: " + doneCount);
+  }
+}
