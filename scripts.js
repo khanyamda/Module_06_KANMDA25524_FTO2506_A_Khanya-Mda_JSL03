@@ -176,3 +176,9 @@ function showCompletedTasks() {
     console.log("Done tasks: " + doneCount);
   }
 }
+
+// Message to show at the start so that the user knows how to use the functions
+console.log("Type the following commands to use the functions:");
+console.log("addTask() - adds new task to the list");
+console.log("showAllTasks() - see all current tasks");
+console.log("showCompletedTasks() - see all 'done' tasks");
